@@ -14,9 +14,9 @@
  <script>
   
     button.addEventListener('click',function(e){
-
+      //jquery
       $.ajax({
-        url:'http://chenshuo2.com:8002/pay',
+        url:'http://jack.com:8002/pay',
         dataType:'jsonp',
         success:function(response){
           if(response === "success"){
@@ -25,13 +25,10 @@
         }
       })
 
-
-
-
-
+      //js原生
       // let script = document.createElement('script');
       // let functionName = 'frank' + parseInt(Math.random()*10000,10);
-      // script.src = 'http://chenshuo2.com:8002/pay?callback=' + functionName;
+      // script.src = 'http://jack.com:8002/pay?callback=' + functionName;
       // window[functionName] = function(result){
         
       //   if(result === 'success'){
@@ -53,6 +50,8 @@
       // }
 
     })
+
+    
       // let image = document.createElement('img');
       // image.src="/pay";
       // image.onload = function(){
