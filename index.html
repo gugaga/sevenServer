@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <h5>您的账户余额是  <span id="amount">&&&amount&&&</span></h5>
+  <button id="button">付款1块钱</button>
+  <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+ <script>
+  
+    button.addEventListener('click',function(e){
+
+      $.ajax({
+        url:'http://chenshuo2.com:8002/pay',
+        dataType:'jsonp',
+        success:function(response){
+          if(response === "success"){
+            amount.innerText = amount.innerText - 1;
+          }
+        }
+      })
+
+
+
+
+
+      // let script = document.createElement('script');
+      // let functionName = 'frank' + parseInt(Math.random()*10000,10);
+      // script.src = 'http://chenshuo2.com:8002/pay?callback=' + functionName;
+      // window[functionName] = function(result){
+        
+      //   if(result === 'success'){
+      //     amount.innerText = amount.innerText - 1;
+      //   }else{
+
+      //   }
+      // }
+     
+      // document.body.appendChild(script);
+      // script.onload = function(e){  
+      //   e.currentTarget.remove();
+      //   delete window[functionName]
+      // }
+      // script.onerror = function(e){
+      //     alert('fail');
+      //   e.currentTarget.remove();
+      //   delete window[functionName];
+      // }
+
+    })
+      // let image = document.createElement('img');
+      // image.src="/pay";
+      // image.onload = function(){
+      //   alert('打款成功');
+      //   amount.innerText = amount.innerText - 1;
+      // }
+      // image.onerror = function(){
+      //   alert('打款失败');
+      // }
+    //})
+ </script>
+</body>
+</html>
